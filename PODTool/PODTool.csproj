@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C46C842-D1E4-4866-9247-184D02A89E0E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PODTool</RootNamespace>
+    <AssemblyName>Poddy</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>terminalrealityicon_pod.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FilePreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FilePreview.Designer.cs">
+      <DependentUpon>FilePreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\POD\NodeTypes\PODArchiveTreeNode.cs" />
+    <Compile Include="Modules\POD\PODFile\PODStringBuf.cs" />
+    <Compile Include="Modules\POD\ResponseFile.cs" />
+    <Compile Include="Native\DataObjectEx.cs" />
+    <Compile Include="Native\NativeMethods.cs" />
+    <Compile Include="NodeTypes\ArchiveTreeNode.cs" />
+    <Compile Include="NodeTypes\PoddyTreeNodeBase.cs" />
+    <Compile Include="NodeTypes\EntryTreeNode.cs" />
+    <Compile Include="Modules\POD\PODFile\AuditLog.cs" />
+    <Compile Include="AuditLogViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuditLogViewer.Designer.cs">
+      <DependentUpon>AuditLogViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\POD\PODFile\Constants.cs" />
+    <Compile Include="Modules\POD\Checksum\Crc32CCITT.cs" />
+    <Compile Include="Checksum\ChecksumAlgorithm.cs" />
+    <Compile Include="Modules\POD\Checksum\EPDCrc32.cs" />
+    <Compile Include="NodeTypes\DirectoryTreeNode.cs" />
+    <Compile Include="Modules\POD\PODFile\EditorEntries.cs" />
+    <Compile Include="Extensions\BinaryExtensions.cs" />
+    <Compile Include="Extensions\ControlExtensions.cs" />
+    <Compile Include="Modules\POD\PODFile\PODWriter.cs" />
+    <Compile Include="Modules\POD\PODFile\Enums.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PODMetaEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PODMetaEdit.Designer.cs">
+      <DependentUpon>PODMetaEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgramSettings.cs" />
+    <Compile Include="Modules\POD\PODFile\PODFile.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShadowLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Checksum\CrcCalculatingStream.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\TimeExtensions.cs" />
+    <Compile Include="Extensions\TreeExtensions.cs" />
+    <EmbeddedResource Include="AuditLogViewer.resx">
+      <DependentUpon>AuditLogViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilePreview.resx">
+      <DependentUpon>FilePreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PODMetaEdit.resx">
+      <DependentUpon>PODMetaEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-document-export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-document-import.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-document--minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder-open-document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder--plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross-script.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\box--pencil.png" />
+    <None Include="Resources\blue-document--pencil.png" />
+    <None Include="Resources\document--pencil.png" />
+    <None Include="Resources\question-white.png" />
+    <None Include="Resources\address-book--pencil.png" />
+    <None Include="Resources\gear.png" />
+    <None Include="Resources\box--arrow.png" />
+    <None Include="Resources\disk-rename.png" />
+    <None Include="Resources\terminalrealityicon_pod.png" />
+    <None Include="Resources\tick-circle.png" />
+    <None Include="Resources\ui-menu-blue.png" />
+    <None Include="Resources\application-table.png" />
+    <None Include="Resources\transparentchecker.png" />
+    <None Include="Resources\magnifier.png" />
+    <Content Include="terminalrealityicon_pod.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
